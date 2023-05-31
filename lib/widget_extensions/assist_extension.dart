@@ -1,10 +1,10 @@
 part of '../awesome_extensions.dart';
 
-extension ContainerExtensions on Container {
+extension AssistExtensions on Widget {
   /// Add round corners to a Container
   ///  if the Container already has a color use [backgroundColor] instead and remove the
   ///  [Color] from the Container it self
-  Container withRoundCorners({required double radius}) => 
+  Widget withRoundCorners({required double radius}) => 
     Container(
         child: ClipRRect(
           borderRadius: BorderRadius.circular(radius),
@@ -15,7 +15,7 @@ extension ContainerExtensions on Container {
   /// A shadow cast by a box
   ///
   /// [shadowColor]
-  Container withShadow(
+  Widget withShadow(
           {Color shadowColor = Colors.grey,
           double blurRadius = 20.0,
           double spreadRadius = 1.0,
@@ -32,4 +32,12 @@ extension ContainerExtensions on Container {
         ),
         child: this,
       );
+      
+  Widget asSquare() {
+    return AspectRatio(
+      aspectRatio: 1.0,
+      child: this,
+    );
+  }
 }
+
