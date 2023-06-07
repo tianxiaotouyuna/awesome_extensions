@@ -39,5 +39,25 @@ extension AssistExtensions on Widget {
       child: this,
     );
   }
+  Widget backgroundColor(Color color) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: color,
+      ),
+      child: this,
+    );
+  }
+  Widget toFullScreen() {
+    return Stack(
+      children: [
+        Positioned.fill(
+          child: Container(
+            color: Colors.blue,
+            child: this,
+          ),
+        ),
+      ],
+    );
+  }
 }
 
